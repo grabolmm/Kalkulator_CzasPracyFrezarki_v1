@@ -22,10 +22,13 @@ public class MainController {
     int glebokoscObrysu;
     ObservableList<Material> listaMaterialow = FXCollections.observableArrayList();
     ObservableList<Narzedzie> listaNarzedzi = FXCollections.observableArrayList();
-    ObservableList<Operacja> listaOperacji = FXCollections.observableArrayList(
-            new Operacja(1, "frez", "opis"),
-            new Operacja(2, "glowica", "opis 2")
-    );
+
+//    ObservableList<Operacja> listaOperacji = FXCollections.observableArrayList(
+//            new Operacja(1, wybraneNarzedzie.wyswietlNazwe(), "opis"),
+//            new Operacja(2, "glowica", "opis 2")
+//    );
+
+    int i = 1;
 
     @FXML
     private ChoiceBox<String> choiceBox1;
@@ -116,6 +119,13 @@ public class MainController {
     @FXML
     private void dodanieDoTabeli(){
 
+
+        Operacja operacja = new Operacja(i, choiceBox2.getValue(), "opis");
+        ObservableList<Operacja> listaOperacji = tableView.getItems();
+        listaOperacji.add(operacja);
+        tableView.setItems(listaOperacji);
+        i += 1;
+
         choiceBox2.setValue("");
         textField1.setText("");
         textField2.setText("");
@@ -127,6 +137,8 @@ public class MainController {
         wprowadzonaDlugoscObrysu.setText("");
         wprowadzonaGlebokoscObrysu.setText("");
         wynik.setText("");
+
+
 
     }
     @FXML
@@ -151,11 +163,11 @@ public class MainController {
         zaladujListeMaterialow();
         zaladujListeNarzedzi();
 
-        kolLp.setCellValueFactory(new PropertyValueFactory<>("lp"));
-        kolNarzedzie.setCellValueFactory(new PropertyValueFactory<>("nazwa"));
-        kolOpisOperacji.setCellValueFactory(new PropertyValueFactory<>("opisOperacji"));
-        tableView.setItems(listaOperacji);
-        tableView.getColumns().addAll(kolLp, kolNarzedzie, kolOpisOperacji);
+        kolLp.setCellValueFactory(new PropertyValueFactory<Operacja, Integer>("lp"));
+        kolNarzedzie.setCellValueFactory(new PropertyValueFactory<Operacja, String>("nazwa"));
+        kolOpisOperacji.setCellValueFactory(new PropertyValueFactory<Operacja, String>("opisOperacji"));
+//        tableView.setItems(listaOperacji);
+//        tableView.getColumns().addAll(kolLp, kolNarzedzie, kolOpisOperacji);
 
     }
     private void zaladujListeMaterialow(){
