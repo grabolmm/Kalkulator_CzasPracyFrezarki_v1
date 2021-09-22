@@ -45,9 +45,9 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="820.0" prefWidth="659.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.kalkulator_czaspracyfrezarki_v1.MainController">
+<StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="820.0" prefWidth="660.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.kalkulator_czaspracyfrezarki_v1.MainController">
    <children>
-      <Pane prefHeight="689.0" prefWidth="690.0">
+      <Pane prefHeight="820.0" prefWidth="600.0">
          <children>
             <Label layoutX="14.0" layoutY="14.0" text="Kalkulator - czas pracy frezarki">
                <font>
