@@ -38,6 +38,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
@@ -90,6 +91,7 @@
                   <Label fx:id="listaParametrow" prefHeight="149.0" prefWidth="203.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <Label fx:id="wprowadzonaDlugoscObrysu" prefHeight="17.0" prefWidth="114.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
                   <Label fx:id="wprowadzonaGlebokoscObrysu" prefHeight="17.0" prefWidth="119.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3" />
                </children>
             </GridPane>
             <TableView fx:id="tableView" layoutX="20.0" layoutY="514.0" prefHeight="254.0" prefWidth="619.0">

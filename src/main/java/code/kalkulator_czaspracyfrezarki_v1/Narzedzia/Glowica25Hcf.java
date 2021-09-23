@@ -1,4 +1,4 @@
-package code.kalkulator_czaspracyfrezarki_v1;
+package code.kalkulator_czaspracyfrezarki_v1.Narzedzia;
 
 public class Glowica25Hcf implements Narzedzie{
     private final String nazwa = "Glowica fi 25 HCF";

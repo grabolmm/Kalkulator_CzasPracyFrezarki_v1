@@ -1,15 +1,16 @@
 package code.kalkulator_czaspracyfrezarki_v1;
 
-import javafx.beans.InvalidationListener;
+import code.kalkulator_czaspracyfrezarki_v1.KlasyDoList.Material;
+import code.kalkulator_czaspracyfrezarki_v1.KlasyDoList.OperacjaDoTabeli;
+import code.kalkulator_czaspracyfrezarki_v1.Narzedzia.*;
+import code.kalkulator_czaspracyfrezarki_v1.Olbiczenia.ObliczeniaCzasu;
+import code.kalkulator_czaspracyfrezarki_v1.Olbiczenia.Parametry;
 import javafx.collections.FXCollections;
-import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-
-import java.lang.reflect.Field;
-import java.util.*;
+import javafx.scene.image.ImageView;
 
 public class MainController {
     Narzedzie wybraneNarzedzie = new WybraneNarzedzie();
@@ -120,23 +121,23 @@ public class MainController {
     private void dodanieDoTabeli(){
 
 
-        Operacja operacja = new Operacja(i, choiceBox2.getValue(), "opis");
-        ObservableList<Operacja> listaOperacji = tableView.getItems();
-        listaOperacji.add(operacja);
-        tableView.setItems(listaOperacji);
-        i += 1;
-
-        choiceBox2.setValue("");
-        textField1.setText("");
-        textField2.setText("");
-        listaParametrow.setText("");
-        glebokoscObrysu = 0;
-        dlugoscObrysu = 0;
-        obliczoneObrotyWrzeciona = 0;
-        obliczonyPosuwNarzedzia = 0;
-        wprowadzonaDlugoscObrysu.setText("");
-        wprowadzonaGlebokoscObrysu.setText("");
-        wynik.setText("");
+//        OperacjaDoTabeli operacjaDoTabeli = new OperacjaDoTabeli(i, choiceBox2.getValue(), "opis");
+//        ObservableList<OperacjaDoTabeli> listaOperacji = tableView.getItems();
+//        listaOperacji.add(operacjaDoTabeli);
+//        tableView.setItems(listaOperacji);
+//        i += 1;
+//
+//        choiceBox2.setValue("");
+//        textField1.setText("");
+//        textField2.setText("");
+//        listaParametrow.setText("");
+//        glebokoscObrysu = 0;
+//        dlugoscObrysu = 0;
+//        obliczoneObrotyWrzeciona = 0;
+//        obliczonyPosuwNarzedzia = 0;
+//        wprowadzonaDlugoscObrysu.setText("");
+//        wprowadzonaGlebokoscObrysu.setText("");
+//        wynik.setText("");
 
 
 
@@ -150,22 +151,26 @@ public class MainController {
 
     }
     @FXML
-    private TableView<Operacja> tableView;
+    private TableView<OperacjaDoTabeli> tableView;
     @FXML
-    private TableColumn<Operacja, Integer> kolLp;
+    private TableColumn<OperacjaDoTabeli, Integer> kolLp;
     @FXML
-    private TableColumn<Operacja, String> kolNarzedzie;
+    private TableColumn<OperacjaDoTabeli, String> kolNarzedzie;
     @FXML
-    private TableColumn<Operacja, String> kolOpisOperacji;
+    private TableColumn<OperacjaDoTabeli, String> kolOpisOperacji;
+    @FXML
+    private ImageView imageView;
+
+
 
     @FXML
     public void initialize(){
         zaladujListeMaterialow();
         zaladujListeNarzedzi();
 
-        kolLp.setCellValueFactory(new PropertyValueFactory<Operacja, Integer>("lp"));
-        kolNarzedzie.setCellValueFactory(new PropertyValueFactory<Operacja, String>("nazwa"));
-        kolOpisOperacji.setCellValueFactory(new PropertyValueFactory<Operacja, String>("opisOperacji"));
+        kolLp.setCellValueFactory(new PropertyValueFactory<OperacjaDoTabeli, Integer>("lp"));
+        kolNarzedzie.setCellValueFactory(new PropertyValueFactory<OperacjaDoTabeli, String>("nazwa"));
+        kolOpisOperacji.setCellValueFactory(new PropertyValueFactory<OperacjaDoTabeli, String>("opisOperacji"));
 //        tableView.setItems(listaOperacji);
 //        tableView.getColumns().addAll(kolLp, kolNarzedzie, kolOpisOperacji);
 

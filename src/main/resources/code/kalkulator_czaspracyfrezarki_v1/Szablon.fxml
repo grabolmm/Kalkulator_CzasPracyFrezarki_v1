@@ -6,6 +6,8 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
@@ -14,31 +16,33 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="825.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.kalkulator_czaspracyfrezarki_v1.SzablonController">
    <children>
       <Pane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <GridPane layoutX="8.0" layoutY="115.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="412.0">
+            <GridPane layoutX="15.0" layoutY="45.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="498.0" minWidth="10.0" prefWidth="200.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="200.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="Wybierz materiał:" GridPane.rowIndex="2" />
-                  <ChoiceBox prefWidth="150.0" GridPane.rowIndex="3" />
-                  <Label text="Wybierz ilość operacji:" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField maxWidth="-Infinity" prefHeight="26.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label text="Wybierz materiał:" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="choiceBoxWyborMaterialu" prefWidth="150.0" GridPane.rowIndex="5" />
+                  <Label text="Wybierz ilość operacji:" GridPane.rowIndex="6" />
+                  <TextField fx:id="textFieldIloscOperacji" maxWidth="-Infinity" prefHeight="26.0" prefWidth="150.0" GridPane.rowIndex="7" />
                   <Label text="Nazwa:" />
-                  <Label text="Numer rysunku:" GridPane.columnIndex="1" />
-                  <TextField maxWidth="-Infinity" prefHeight="26.0" prefWidth="150.0" GridPane.rowIndex="1" />
-                  <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Numer rysunku:" GridPane.rowIndex="2" />
+                  <TextField fx:id="textFieldNazwa" maxWidth="-Infinity" prefHeight="26.0" prefWidth="150.0" GridPane.rowIndex="1" />
+                  <TextField fx:id="textFieldNrRysunku" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="150.0" GridPane.rowIndex="3" />
                </children>
             </GridPane>
             <Label layoutX="15.0" layoutY="14.0" text="DANE WEJŚCIOWE">
@@ -47,46 +51,60 @@
                </font>
             </Label>
             <Line endX="355.00006103515625" endY="7.62939453125E-6" layoutX="545.0" layoutY="44.0" startX="-545.0" startY="7.62939453125E-6" />
-            <Button layoutX="122.0" layoutY="348.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Wprowadź dane" />
-            <Line endX="-113.6070556640625" endY="270.5928955078125" layoutX="528.0" layoutY="162.0" startX="-113.6070556640625" startY="-162.0" />
+            <Button fx:id="butonWprowadzDane" layoutX="14.0" layoutY="348.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#wprowadzDane" prefHeight="25.0" prefWidth="150.0" text="Wprowadź dane" />
+            <Line endX="-322.5" endY="270.5928955078125" layoutX="528.0" layoutY="162.0" startX="-322.5" startY="-162.5" />
             <Line endX="693.0" endY="49.0928955078125" layoutX="206.0" layoutY="384.0" startX="-207.0" startY="49.0928955078125" />
-            <Label layoutX="436.0" layoutY="14.0" text="OBLICZENIA - OPERACJA 1 z 5">
+            <Label fx:id="labelIloscOperacji" layoutX="215.0" layoutY="14.0" text="OBLICZENIA">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <GridPane layoutX="436.0" layoutY="44.0">
+            <GridPane layoutX="215.0" layoutY="45.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="200.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <Label text="Wybierz narzędzie:" />
-                  <ChoiceBox prefWidth="150.0" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="choiceBoxWyborNarzedzia" prefWidth="150.0" GridPane.rowIndex="1" />
                   <Label text="Wprowadź długość obrysu (mm):" GridPane.rowIndex="4" />
-                  <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="150.0" GridPane.rowIndex="5" />
+                  <TextField fx:id="textFieldDlugoscObrysu" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="150.0" GridPane.rowIndex="5" />
                   <Label text="Wprowadź głębokość obrysu (mm):" GridPane.rowIndex="6" />
-                  <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="150.0" GridPane.rowIndex="7" />
+                  <TextField fx:id="textFieldGlebokoscObrysu" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="150.0" GridPane.rowIndex="7" />
                   <Label text="Opis operacji:" GridPane.rowIndex="2" />
-                  <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="150.0" GridPane.rowIndex="3" />
+                  <TextField fx:id="textFieldOpisOperacji" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="150.0" GridPane.rowIndex="3" />
                </children>
             </GridPane>
-            <TableView layoutX="15.0" layoutY="495.0" prefHeight="211.0" prefWidth="885.0">
+            <TableView fx:id="tableViewTabela" layoutX="15.0" layoutY="495.0" prefHeight="280.0" prefWidth="871.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
+                <TableColumn fx:id="kolumnaOperacja" prefWidth="75.0" text="Operacja" />
+                <TableColumn fx:id="kolumnaOpisOperacji" prefWidth="96.0" text="Opis operacji" />
+                  <TableColumn fx:id="kolumnaNarzedzie" prefWidth="84.0" text="Narzędzie" />
+                  <TableColumn prefWidth="75.0" text="Parametry">
+                     <columns>
+                        <TableColumn fx:id="kolumnaVc" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" resizable="false" text="Vc" />
+                        <TableColumn fx:id="kolumnaD" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" resizable="false" text="d" />
+                        <TableColumn fx:id="kolumnaFz" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="fz" />
+                        <TableColumn fx:id="kolumnaAp" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" resizable="false" text="ap" />
+                        <TableColumn fx:id="kolumnaN" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" resizable="false" text="n" />
+                        <TableColumn fx:id="kolumnaF" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" resizable="false" text="f" />
+                     </columns>
+                  </TableColumn>
+                  <TableColumn fx:id="kolumnaDlugoscObrysu" prefWidth="103.0" text="Długość obrysu" />
+                  <TableColumn fx:id="kolumnaGlebokoscObrysu" prefWidth="115.0" text="Głębokość obrysu" />
+                  <TableColumn fx:id="kolumnaCzasObrobki" prefWidth="92.0" text="Czas obróbki" />
               </columns>
             </TableView>
-            <GridPane layoutX="652.0" layoutY="44.0">
+            <GridPane layoutX="432.0" layoutY="45.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="200.0" />
               </columnConstraints>
@@ -95,14 +113,27 @@
                 <RowConstraints minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="Parametry skrawania:" />
-                  <Label prefHeight="150.0" prefWidth="200.0" text="xxx" GridPane.rowIndex="1" />
+                  <Label fx:id="labelParametrySkrawania" prefHeight="150.0" prefWidth="200.0" GridPane.rowIndex="1" />
+                  <Button fx:id="buttonPokazParametrySkrawania" mnemonicParsing="false" onAction="#pokazParametrySkrawania" prefHeight="25.0" prefWidth="160.0" text="Pokaż parametry skrawania" />
                </children>
             </GridPane>
             <Line endX="643.0" endY="-283.0" layoutX="257.0" layoutY="283.0" startX="-257.0" startY="-283.0" />
-            <Button layoutX="436.0" layoutY="348.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Oblicz czas obróbki" />
-            <Label layoutX="652.0" layoutY="352.0" text="wynik:" />
-            <Button layoutX="436.0" layoutY="395.0" mnemonicParsing="false" prefWidth="150.0" text="Dodaj operacje do tabeli" />
+            <Button fx:id="buttonObliczCzasObrobki" layoutX="215.0" layoutY="345.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#obliczenieCzasuObrobki" prefHeight="25.0" prefWidth="150.0" text="Oblicz czas obróbki" />
+            <Label fx:id="labelWynik" layoutX="449.0" layoutY="352.0" text="wynik:" />
+            <Button fx:id="buttonDodajOperacjeDoTabeli" layoutX="215.0" layoutY="392.0" mnemonicParsing="false" onAction="#dodajOperacjeDoTabeli" prefWidth="200.0" text="Dodaj operacje do tabeli" />
+            <ImageView fitHeight="165.0" fitWidth="252.0" layoutX="649.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../suwmiarka.jpg" />
+               </image></ImageView>
+            <Line endX="-99.5" endY="335.5928955078125" layoutX="738.0" layoutY="98.0" startX="-99.5" startY="-98.0" />
+            <TableView fx:id="tableViewDaneWejsciowe" layoutX="15.0" layoutY="434.0" prefHeight="62.0" prefWidth="871.0">
+              <columns>
+                <TableColumn fx:id="kolumnaNazwa" minWidth="217.0" prefWidth="217.0" text="Nazwa" />
+                <TableColumn fx:id="kolumnaNumerRysunku" minWidth="217.0" prefWidth="120.0" text="Numer rysunku" />
+                  <TableColumn fx:id="kolumnaMaterial" minWidth="217.0" prefWidth="108.0" text="Materiał" />
+                  <TableColumn fx:id="kolumnaData" minWidth="217.0" prefWidth="75.0" text="Data" />
+              </columns>
+            </TableView>
          </children>
       </Pane>
    </children>

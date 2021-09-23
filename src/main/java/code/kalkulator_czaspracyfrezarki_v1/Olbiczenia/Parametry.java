@@ -1,4 +1,4 @@
-package code.kalkulator_czaspracyfrezarki_v1;
+package code.kalkulator_czaspracyfrezarki_v1.Olbiczenia;
 
 public class Parametry {
     private double n;

@@ -1,4 +1,4 @@
-package code.kalkulator_czaspracyfrezarki_v1;
+package code.kalkulator_czaspracyfrezarki_v1.KlasyDoList;
 
 public class Material {
     public String nazwa;

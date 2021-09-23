@@ -1,4 +1,4 @@
-package code.kalkulator_czaspracyfrezarki_v1;
+package code.kalkulator_czaspracyfrezarki_v1.Narzedzia;
 
 public class WybraneNarzedzie implements Narzedzie{
     @Override

@@ -1,12 +1,13 @@
-package code.kalkulator_czaspracyfrezarki_v1;
+package code.kalkulator_czaspracyfrezarki_v1.Narzedzia;
 
-public class Glowica40Sdkt implements Narzedzie {
-    private final String nazwa = "Glowica fi 40 SDKT";
-    public final int d =40;
-    public final int z =6;
+public class Frez16Vhm implements Narzedzie{
+    private final String nazwa = "Frez 16 VHM";
+    public final int d =16;
+    public final int z =4;
     public int vc;
     public double fz;
     public double ap;
+
 
     @Override
     public int d() {
@@ -40,21 +41,21 @@ public class Glowica40Sdkt implements Narzedzie {
 
     @Override
     public void parametryDlaStali() {
-        vc = 1000;
+        vc = 100;
         fz = 0.15;
         ap = 2;
     }
 
     @Override
     public void parametryDlaAluminium() {
-        vc = 2000;
+        vc = 200;
         fz = 0.25;
         ap = 3.5;
     }
 
     @Override
     public void parametryDlaZeliwa() {
-        vc = 800;
+        vc = 80;
         fz = 0.05;
         ap = 1.5;
     }
