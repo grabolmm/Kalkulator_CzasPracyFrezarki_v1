@@ -86,22 +86,22 @@
             </GridPane>
             <TableView fx:id="tableViewTabela" layoutX="15.0" layoutY="495.0" prefHeight="280.0" prefWidth="871.0">
               <columns>
-                <TableColumn fx:id="kolumnaOperacja" prefWidth="75.0" text="Operacja" />
-                <TableColumn fx:id="kolumnaOpisOperacji" prefWidth="96.0" text="Opis operacji" />
-                  <TableColumn fx:id="kolumnaNarzedzie" prefWidth="84.0" text="Narzędzie" />
-                  <TableColumn prefWidth="75.0" text="Parametry">
+                <TableColumn fx:id="kolumnaOperacja" prefWidth="75.0" resizable="false" text="Operacja" />
+                <TableColumn fx:id="kolumnaOpisOperacji" prefWidth="96.0" resizable="false" text="Opis operacji" />
+                  <TableColumn fx:id="kolumnaNarzedzie" prefWidth="84.0" resizable="false" text="Narzędzie" />
+                  <TableColumn prefWidth="75.0" resizable="false" text="Parametry">
                      <columns>
-                        <TableColumn fx:id="kolumnaVc" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" resizable="false" text="Vc" />
-                        <TableColumn fx:id="kolumnaD" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" resizable="false" text="d" />
-                        <TableColumn fx:id="kolumnaFz" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="fz" />
+                        <TableColumn fx:id="kolumnaVc" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="Vc" />
+                        <TableColumn fx:id="kolumnaD" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="d" />
+                        <TableColumn fx:id="kolumnaFz" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" resizable="false" text="fz" />
                         <TableColumn fx:id="kolumnaAp" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" resizable="false" text="ap" />
                         <TableColumn fx:id="kolumnaN" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" resizable="false" text="n" />
                         <TableColumn fx:id="kolumnaF" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" resizable="false" text="f" />
                      </columns>
                   </TableColumn>
-                  <TableColumn fx:id="kolumnaDlugoscObrysu" prefWidth="103.0" text="Długość obrysu" />
-                  <TableColumn fx:id="kolumnaGlebokoscObrysu" prefWidth="115.0" text="Głębokość obrysu" />
-                  <TableColumn fx:id="kolumnaCzasObrobki" prefWidth="92.0" text="Czas obróbki" />
+                  <TableColumn fx:id="kolumnaDlugoscObrysu" prefWidth="103.0" resizable="false" text="Długość obrysu" />
+                  <TableColumn fx:id="kolumnaGlebokoscObrysu" prefWidth="115.0" resizable="false" text="Głębokość obrysu" />
+                  <TableColumn fx:id="kolumnaCzasObrobki" prefWidth="92.0" resizable="false" text="Czas obróbki" />
               </columns>
             </TableView>
             <GridPane layoutX="432.0" layoutY="45.0">
@@ -123,17 +123,22 @@
             <Button fx:id="buttonDodajOperacjeDoTabeli" layoutX="215.0" layoutY="392.0" mnemonicParsing="false" onAction="#dodajOperacjeDoTabeli" prefWidth="200.0" text="Dodaj operacje do tabeli" />
             <ImageView fitHeight="165.0" fitWidth="252.0" layoutX="649.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../suwmiarka.jpg" />
+                  <Image url="file:/C:/Users/wlodek/IdeaProjects/Kalkulator_CzasPracyFrezarki_v1/suwmiarka.jpg" />
                </image></ImageView>
             <Line endX="-99.5" endY="335.5928955078125" layoutX="738.0" layoutY="98.0" startX="-99.5" startY="-98.0" />
             <TableView fx:id="tableViewDaneWejsciowe" layoutX="15.0" layoutY="434.0" prefHeight="62.0" prefWidth="871.0">
               <columns>
-                <TableColumn fx:id="kolumnaNazwa" minWidth="217.0" prefWidth="217.0" text="Nazwa" />
-                <TableColumn fx:id="kolumnaNumerRysunku" minWidth="217.0" prefWidth="120.0" text="Numer rysunku" />
-                  <TableColumn fx:id="kolumnaMaterial" minWidth="217.0" prefWidth="108.0" text="Materiał" />
-                  <TableColumn fx:id="kolumnaData" minWidth="217.0" prefWidth="75.0" text="Data" />
+                <TableColumn fx:id="kolumnaNazwa" minWidth="217.0" prefWidth="217.0" resizable="false" text="Nazwa" />
+                <TableColumn fx:id="kolumnaNumerRysunku" minWidth="217.0" prefWidth="120.0" resizable="false" text="Numer rysunku" />
+                  <TableColumn fx:id="kolumnaMaterial" minWidth="217.0" prefWidth="108.0" resizable="false" text="Materiał" />
+                  <TableColumn fx:id="kolumnaData" minWidth="217.0" prefWidth="75.0" resizable="false" text="Data" />
               </columns>
             </TableView>
+            <Label fx:id="labelZakonczonoObliczenia" layoutX="353.0" layoutY="784.0" prefWidth="250.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>

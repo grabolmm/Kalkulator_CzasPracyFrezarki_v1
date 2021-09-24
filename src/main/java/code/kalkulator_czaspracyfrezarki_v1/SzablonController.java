@@ -10,6 +10,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -17,10 +18,19 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 
+import java.io.IOException;
 import java.util.Date;
 
 public class SzablonController {
+
+    private SzablonController szablonController;
+    public void setSzablonController (SzablonController szablonController){
+        this.szablonController = szablonController;
+    }
+
     Narzedzie wybraneNarzedzie = new WybraneNarzedzie();
     Parametry parametry = new Parametry();
     ObliczeniaCzasu obliczeniaCzasu = new ObliczeniaCzasu();
@@ -36,6 +46,9 @@ public class SzablonController {
 
     ObservableList<Material> listaMaterialow = FXCollections.observableArrayList();
     ObservableList<Narzedzie> listaNarzedzi = FXCollections.observableArrayList();
+
+    @FXML
+    private StackPane mainStackPane;
 
     @FXML
     private ChoiceBox choiceBoxWyborMaterialu;
@@ -190,6 +203,9 @@ public class SzablonController {
     private TableColumn<DaneWejscioweDoTabeli, Date> kolumnaData;
 
     @FXML
+    private Label labelZakonczonoObliczenia;
+
+    @FXML
     void dodajOperacjeDoTabeli(ActionEvent event) {
         ObservableList<OperacjaDoTabeli> operacjaDoTabeliObservableList = tableViewTabela.getItems();
         // dodanie danych poczatkowych do tablicy
@@ -200,6 +216,17 @@ public class SzablonController {
                 Integer.parseInt(textFieldGlebokoscObrysu.getText()), (int)wynikCzas);
         operacjaDoTabeliObservableList.add(operacjaDoTabeli);
         tableViewTabela.setItems(operacjaDoTabeliObservableList);
+        // petla zalezna od ilosci operacji
+        if (i == k){
+            labelZakonczonoObliczenia.setText("ZAKOŃCZONO OBLICZENIA");
+            // Czyszczenie programu
+            czyszczenieProgramu();
+        } else{
+            i += 1;
+            labelIloscOperacji.setText
+                    ("OBLICZENIA - OPERACJA " + String.valueOf(i) + " z " + textFieldIloscOperacji.getText());
+            czyszczenieKolumnyObliczenia();
+        }
     }
 
     @FXML
@@ -277,5 +304,25 @@ public class SzablonController {
                 obliczoneObrotyWrzeciona, obliczonyPosuwNarzedzia, wybraneNarzedzie.ap(), wybraneNarzedzie.fz(),
                 wybraneNarzedzie.z()));
     }
-
+    public void czyszczenieProgramu(){
+        textFieldNazwa.setText(" ");
+        textFieldNrRysunku.setText(" ");
+        textFieldIloscOperacji.setText(" ");
+        textFieldOpisOperacji.setText(" ");
+        textFieldDlugoscObrysu.setText(" ");
+        textFieldGlebokoscObrysu.setText(" ");
+        labelIloscOperacji.setText("OBLICZENIA");
+        labelParametrySkrawania.setText(" ");
+        labelWynik.setText(" ");
+        choiceBoxWyborMaterialu.setValue(null);
+        choiceBoxWyborNarzedzia.setValue(null);
+    }
+    public void czyszczenieKolumnyObliczenia(){
+        choiceBoxWyborNarzedzia.setValue(null);
+        labelParametrySkrawania.setText("");
+        labelWynik.setText("wynik: ");
+        textFieldOpisOperacji.setText("");
+        textFieldDlugoscObrysu.setText("");
+        textFieldGlebokoscObrysu.setText("");
+    }
 }
